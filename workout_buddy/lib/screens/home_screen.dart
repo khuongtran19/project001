@@ -5,6 +5,7 @@ import 'package:workout_buddy/screens/map_screen.dart';
 import 'package:workout_buddy/screens/community_screen.dart';
 import 'package:workout_buddy/screens/marketplace_screen.dart';
 import 'package:workout_buddy/screens/specialists_screen.dart';
+import 'package:workout_buddy/utils/token_storage.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

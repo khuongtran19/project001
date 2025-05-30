@@ -9,12 +9,6 @@ class TokenStorage {
   static Future<SharedPreferences> get _instance async =>
       _prefs ??= await SharedPreferences.getInstance();
 
-  static Future<void> clearTokens() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.remove(_accessTokenKey);
-    await prefs.remove(_refreshTokenKey);
-  }
-
   static Future<void> saveTokens(
     String accessToken,
     String refreshToken,
@@ -42,5 +36,11 @@ class TokenStorage {
   static Future<String?> getRefreshToken() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString(_refreshTokenKey);
+  }
+
+  static Future<void> clearTokens() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove('accessToken');
+    await prefs.remove('refreshToken');
   }
 }
